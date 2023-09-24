@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Bootstrap Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-gray">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group row">
+                    <div class="input-group">
+                        <label for="firstname" class="text-dark">First Name</label>
+
+                        <div class="input-group-prepend">
+                            <img src="user.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="text" class="form-control border" id="firstName" placeholder="First Name"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="input-group">
+                        <label for="lastName" class="text-dark">Last Name</label>
+                        <div class="input-group-prepend">
+                            <img src="user.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="text" class="form-control border" id="lastName" placeholder="Last Name"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <div class="input-group">
+                        <label for="email" class="text-dark">E-Mail</label>
+                        <div class="input-group-prepend">
+                            <img src="email.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="email" class="form-control border" id="email" placeholder="E-Mail"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <div class="input-group">
+                        <label for="phone" class="text-dark">Phone</label>
+                        <div class="input-group-prepend">
+                            <img src="phone.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="tel" class="form-control border" id="phone" placeholder="Phone"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <div class="input-group">
+                        <label for="address" class="text-dark">Address</label>
+                        <div class="input-group-prepend">
+                            <img src="home.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="text" class="form-control border" id="address" placeholder="Address"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+
+                    <div class="input-group">
+                    <label for="city" class="text-dark">City</label>
+                        <div class="input-group-prepend">
+                            <img src="home.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <input type="text" class="form-control border" id="city" placeholder="City"
+                            style="background-color: white" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+
+                    <div class="input-group">
+                    <label for="state" class="text-dark">State</label>
+                    <div class="input-group-prepend">
+                        <img src="list.svg" alt="head-icon" class="input-icon border" />
+                    </div>
+                    <select class="form-control border" id="state" style="background-color: white">
+                        <option>Select State</option>
+                        <option>State 1</option>
+                        <option>State 2</option>
+                        <option>State 3</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="text-dark font-weight-bold">Do you have hosting?</label>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="hosting" id="hostingYes" value="Yes" />
+                            <label class="form-check-label" for="hostingYes"> Yes </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="hosting" id="hostingNo" value="No" />
+                            <label class="form-check-label" for="hostingNo"> No </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="input-group">
+
+                        <label for="projectDescription" class="text-dark font-weight-bold">Project Description</label>
+                        <div class="input-group-prepend">
+                            <img src="pencil.svg" alt="head-icon" class="input-icon border" />
+                        </div>
+                        <textarea class="form-control border" id="projectDescription" rows="5"
+                            placeholder="Project Description" style="background-color: white"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-warning btn-block text-white">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

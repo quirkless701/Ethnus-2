@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 4</title>
+    <style>
+        button {
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Calendar</h1>
+    <div class="container1">
+        <button class="date" onclick="showDate()">Show date</button>
+        <p id="currentDate"></p>
+    </div>
+    <div class="container2">
+        <button class="time" onclick="showTime()">Show time</button>
+        <p id="currentTime"></p>
+    </div>
+    <script>
+        function showDate() {
+            
+            let dateConst = new Date();
+            let date = dateConst.getDate();
+            let month = dateConst.toLocaleString('default', { month: 'long' });
+            let year = dateConst.getFullYear();
+
+            document.querySelector('#currentDate').textContent = date+'/'+month+'/'+year;
+        }
+
+        function showTime() {
+
+            currentTime.innerHTML = new Date();
+        }
+    </script>
+</body>
+</html>

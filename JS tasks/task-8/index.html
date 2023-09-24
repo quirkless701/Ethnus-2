@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 8</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom, rgb(218, 226, 70), rgb(228, 80, 239),rgb(233, 226, 137));
+            height: 96vh;
+        }
+
+        h1{
+            text-align: center;
+            color:blue;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        .input{
+            width: 70%;
+            border-radius: 4px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: white;
+            color: black;
+        }
+
+        #address{
+            width: 71%;
+            height: 130px;
+            border-radius: 4px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+
+        select{
+            background-color: white;
+            color: black;
+        }
+
+        label{
+            width: 30%;
+        }
+
+        button{
+            text-transform: uppercase;
+            color: white;
+            background-color: red;
+            border-radius: 20px;
+            padding: 5px;
+            height: 30px;
+            width: 100px;
+            margin-left: 50%;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <table>
+        <tr>
+            <th>
+                <label for="firstname">First Name:</label>
+            </th>
+            <td>
+                <input class="input" type="text" id="firstname">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="lastname">Last Name:</label>
+            </th>
+            <td>
+                <input class="input" type="text" id="lastname">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="email">Email:</label>
+            </th>
+            <td>
+                <input class="input" type="email" id="email">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="pass">Password:</label>
+            </th>
+            <td>
+                <input class="input" type="password" id="pass">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="repass">Re-Enter Password:</label>
+            </th>
+            <td>
+                <input class="input" type="password" id="repass">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="2">
+                <label for="gender">Gender:</label>
+            </th>
+            <td>
+                <input type="radio" name="gender" id="male">
+                <label for="male">Male</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="gender" id="female">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="age">Age:</label>
+            </th>
+            <td>
+                <input class="input" type="number" id="age">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="phone">Phone Number:</label>
+            </th>
+            <td>
+                <input class="input" type="tel" id="phone">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="address">Address:</label>
+            </th>
+            <td>
+                <textarea name="address" id="address"></textarea>
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="state">State:</label>
+            </th>
+            <td>
+                <input class="input" type="text" id="state">
+                <td class="error"></td>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="country">Country:</label>
+            </th>
+            <td>
+                <select name="country" id="country">
+                    <option value="">Choose your country</option>
+                    <option value="india">India</option>
+                    <option value="us">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                    <option value="japan">Japan</option>
+                    <option value="china">China</option>
+                    <option value="brazil">Brazil</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="lang">Languages known:</label>
+            </th>
+            <td>
+                <input type="checkbox" id="english">
+                <label for="english">English</label>
+
+                <input type="checkbox" id="kannada">
+                <label for="kannada">Kannada</label>
+
+                <input type="checkbox" id="hindi">
+                <label for="hindi">Hindi</label>
+
+                <input type="checkbox" id="telugu">
+                <label for="telugu">Telugu</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" id="declare">
+                <label for="declare">Hereby I declare all the details given are true</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right;" id="login">
+                Login to <a href="https://ethnus.com" target="_blank">Ethnus</a> website
+            </td>
+        </tr>
+    </table>
+    <button class="register">Register</button>
+    <script>
+        const registerButton = document.querySelector(".register");
+        const firstname = document.getElementById("firstname");
+        const lastname = document.getElementById("lastname");
+        const email = document.getElementById("email");
+        const pass = document.getElementById("pass");
+        const repass = document.getElementById("repass");
+        const age = document.getElementById("age");
+        const phone = document.getElementById("phone");
+        const address = document.getElementById("address");
+        const state = document.getElementById("state");
+        
+        registerButton.addEventListener("click", () => {
+            validInputs();
+        });
+
+        const setError = (element, errorMessage) => {
+            const inputControl = element.parentElement.parentElement;
+            const errorDisplay = inputControl.querySelector(".error");
+            errorDisplay.innerText = errorMessage;
+            element.classList.add("error");
+        };
+
+        const setSuccess = (element) => {
+            const inputControl = element.parentElement.parentElement;
+            const errorDisplay = inputControl.querySelector(".error");
+            errorDisplay.innerText = "";
+            element.classList.remove("error");
+        };
+
+        const validInputs = () => {
+            const firstnameValue = firstname.value.trim();
+            const lastnameValue = lastname.value.trim();
+            const emailValue = email.value.trim();
+            const passValue = pass.value.trim();
+            const repassValue = repass.value.trim();
+            const ageValue = age.value.trim();
+            const phoneValue = phone.value.trim();
+            const addressValue = address.value.trim();
+            const stateValue = state.value.trim();
+
+            if (firstnameValue === "") {
+                setError(firstname, "POOR");
+            } else {
+                setSuccess(firstname);
+            }
+
+            if (lastnameValue === "") {
+                setError(lastname, "POOR");
+            } else {
+                setSuccess(lastname);
+            }
+
+            if (emailValue === "") {
+                setError(email, "POOR");
+            } else {
+                setSuccess(email);
+            }
+
+            if (passValue === "") {
+                setError(pass, "POOR");
+            } else {
+                setSuccess(pass);
+            }
+
+            if (repassValue === "") {
+                setError(repass, "POOR");
+            } else if (repassValue !== passValue) {
+                setError(repass, "MISMATCH");
+            } else {
+                setSuccess(repass);
+            }
+
+            if (ageValue === "") {
+                setError(age, "POOR");
+            } else {
+                setSuccess(age);
+            }
+
+            if (phoneValue === "") {
+                setError(phone, "POOR");
+            } else {
+                setSuccess(phone);
+            }
+
+            if (addressValue === "") {
+                setError(address, "POOR");
+            } else {
+                setSuccess(address);
+            }
+
+            if (stateValue === "") {
+                setError(state, "POOR");
+            } else {
+                setSuccess(state);
+            }
+        };
+
+    </script>
+</body>
+</html>

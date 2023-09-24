@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Simple Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .btn-submit {
+            background-color: #ff1d46;
+            color:white;
+            width: 100%; 
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        
+        <form id="simpleForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+                <div class="invalid-feedback" id="nameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+                <div class="invalid-feedback" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+                <div class="invalid-feedback" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <select class="form-control" id="hobbies" name="hobbies">
+                    <option value="" disabled selected>Select a hobby</option>
+                    <option value="reading">Reading</option>
+                    <option value="sports">Sports</option>
+                    <option value="music">Music</option>
+                    <option value="cooking">Cooking</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('simpleForm').addEventListener('submit', function(event) {
+            let valid = true;
+            const fields = ['name', 'email', 'password'];
+            fields.forEach(function(field) {
+                const input = document.getElementById(field);
+                const errorDiv = document.getElementById(field + 'Error');
+                if (!input.value.trim()) {
+                    valid = false;
+                    errorDiv.textContent = field.charAt(0).toUpperCase() + field.slice(1) + ' is required';
+                    input.classList.add('is-invalid');
+                } else {
+                    errorDiv.textContent = '';
+                    input.classList.remove('is-invalid');
+                }
+            });
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

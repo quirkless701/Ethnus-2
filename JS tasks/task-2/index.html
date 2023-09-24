@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 2</title>
+</head>
+<body>
+    <h1 class="heading">Letter Sorting</h1>
+    <label for="word">
+        Enter the word to sort:
+    </label>
+    <input type="text" id="word">
+    <button id="sortButton">Submit</button><br><br>
+    <p class="sort"></p>
+    <script>
+        const inputWord = document.getElementById("word");
+        let resultParagraph = document.querySelector(".sort");
+        let sortButton = document.getElementById("sortButton");
+
+        function sortWord() {
+            const inputValue = inputWord.value;
+            const sortedWord = inputValue.split('').sort().join('');
+
+            resultParagraph.textContent = "Sorted word in alphabetical order: " + sortedWord;
+        }
+
+        sortButton.addEventListener("click", sortWord);
+    </script>
+</body>
+</html>

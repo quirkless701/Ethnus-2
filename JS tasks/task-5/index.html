@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 5</title>
+    <style>
+        form {
+            width: 100%;
+            border-radius: 10px;
+            text-align: left;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"].error,
+        input[type="email"].error,
+        input[type="url"].error,
+        textarea.error {
+            border: 2px solid #ff3860;
+        }
+
+        .container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .container label {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: white;
+            color: black;
+            margin-left: 20px;
+            width: 30%;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 6px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get" id="form">
+        <div class="container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="fullname">
+            <div class="error"></div>
+        </div>
+        <div class="container">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="mail">
+            <div class="error"></div>
+        </div>
+        <div class="container">
+            <label for="site">Website:</label>
+            <input type="url" id="site" class="site">
+            <div class="error"></div>
+        </div>
+        <div class="container">
+            <label for="msg">Message:</label>
+            <textarea name="msg" id="msg" rows="6"></textarea>
+            <div class="error"></div>
+        </div>
+        <div class="container">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <script>
+        const form = document.getElementById("form");
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const website = document.getElementById("site");
+        const message = document.getElementById("msg");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            validInputs();
+        });
+
+        const setError = (element, errorMessage) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText = errorMessage;
+            element.classList.add('error');
+        };
+
+        const setSuccess = element => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText = '';
+            element.classList.remove('error');
+        }
+
+        const validInputs = () => {
+            const nameValue = name.value.trim();
+            const emailValue = email.value.trim();
+            const websiteValue = website.value.trim();
+            const messageValue = message.value.trim();
+
+            if (nameValue === "") {
+                setError(name, "This field is required");
+            } else {
+                setSuccess(name);
+            }
+
+            if (emailValue === "") {
+                setError(email, "A valid email address is required");
+            } else {
+                setSuccess(email);
+            }
+
+            if (websiteValue === "") {
+                setError(website, "A valid URL is required");
+            } else {
+                setSuccess(website);
+            }
+
+            if (messageValue === "") {
+                setError(message, "This field is required");
+            } else {
+                setSuccess(message);
+            }
+        }
+    </script>
+</body>
+</html>

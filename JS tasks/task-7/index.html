@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" class="center">
+        <div>
+            <img id="myimg" src="train.png" style="position: absolute; left: 0;" />
+        </div>
+        <div>
+            <p>Click the following buttons to handle animation</p>
+            <input type="button" value="start" onclick="startAnimation();" />
+            <input type="button" value="stop" onclick="stopAnimation();" />
+        </div>
+    </div>
+
+    <script>
+        let animationInterval;
+
+        function moveRight() {
+            let img = document.getElementById("myimg");
+            let left = parseInt(getComputedStyle(img).left) || 0;
+
+            if (left < window.innerWidth - img.width) {
+                img.style.left = (left + 10) + "px";
+            } else {
+                img.style.left = "0px";
+            }
+        }
+
+        function startAnimation() {
+            animationInterval = setInterval(moveRight, 50);
+        }
+
+        function stopAnimation() {
+            clearInterval(animationInterval);
+        }
+    </script>
+</body>
+</html>
